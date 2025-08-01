@@ -29,7 +29,7 @@ let maxAge = 60;
 
 //   3. Создать переменную "age", в которую вы будете вводить возраст при выполнении программы
 
-let age = 18;
+let age = 60;
 
 //   4. Добавьте проверку: если тип данных в переменной age не number - вывести в консоль Incorrect data type
 
@@ -61,14 +61,17 @@ if (age < minAge) {
 // Преобразовать Task 2 таким образом, чтобы значение НАПРИМЕР '2' (т.е. ЛЮБАЯ строка в которой лежат ТОЛЬКО ЦИФРЫ) пропускалось, 
 //   преобразовываясь в number
 if (isNaN(age)) {
-    console.log("Technical work")
-} else if (typeof age === "string" || typeof age === "number") {
+    console.log("What did yo print??")
+} else 
+if (typeof age === "string" || typeof age === "number") {
     age = Number(age) 
         if (age < minAge) {
             console.log("You don't have access cause your age is " + age + ". It's less then " + minAge)
         } else if ((age >= minAge) && (age < maxAge)) {
                 console.log("Welcome to Onlyfans!")
-        } else if (age >= maxAge) {
+        } else if (age > maxAge) {
                 console.log("Keep calm and look Culture channel")
-            } 
+            } else {
+            console.log("Technical work")
         }
+    }
