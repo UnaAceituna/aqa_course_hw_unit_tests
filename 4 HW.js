@@ -29,12 +29,12 @@ let maxAge = 60;
 
 //   3. Создать переменную "age", в которую вы будете вводить возраст при выполнении программы
 
-let age = 14;
+let age = 18;
 
 //   4. Добавьте проверку: если тип данных в переменной age не number - вывести в консоль Incorrect data type
 
 if (typeof age !== "number") {
-    console.log("Incorrect data type")
+    throw new Error("Incorrect data type")
 }
 
 //   4. Создать if в котором будете проверять весь код переменной age со следующими условиями:
@@ -43,14 +43,14 @@ if (typeof age !== "number") {
 //     - Если "age" больше maxAge, вывести в консоль "Keep calm and look Culture channel".
 //     - Иначе выводите "Technical work".
 
-if (typeof age !== "number") {
-    console.log("Technical work")
-} else if (age < minAge) {
+if (age < minAge) {
     console.log("You don't have access cause your age is " + age + ". It's less then " + minAge)
 } else if ((age >= minAge) && (age < maxAge)) {
     console.log("Welcome to Onlyfans!")
-} else if (age >= maxAge) {
+} else if (age > maxAge) {
     console.log("Keep calm and look Culture channel")
+} else {
+    console.log("Technical work")
 }
 
 //   5. Проверить задание со следующими значениями в переменной age: 10, 17, 18, 19, 59, 60, 61
