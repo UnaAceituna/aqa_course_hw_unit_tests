@@ -9,24 +9,7 @@
 */
 
 function digitalRoot(number) {
-  if (number >= 0 && number <= 9) {
-    return number
-  } 
-
-  if (isNaN(number)) {
-    return false
-  }
-
-  let num = ("" + number).split('').map(Number)
-  let sum = 0
-
-  for (const el of num) 
-      sum += el
-      if (sum > 9) {
-        return digitalRoot(sum)
-      } else
-        return sum
+  // Ваш код
 }
-console.log(digitalRoot(5))
 
 export { digitalRoot };
