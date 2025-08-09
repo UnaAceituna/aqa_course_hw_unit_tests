@@ -4,13 +4,10 @@
 */
 
 function isPalindrom(word) {
-  if (typeof word !== 'string' || parseInt(word))
-  return false
+  if (typeof word !== 'string')
+    return false
   let palindrome = word.split("").reverse().join("")
-  if ((word.toLowerCase() == palindrome.toLowerCase())) {
-    return true
-  } else
-  return false
+    return word.toLowerCase() === palindrome.toLowerCase()
 }
 console.log(isPalindrom(""))
 
@@ -21,20 +18,19 @@ console.log(isPalindrom(""))
 
 
 function findLongestWords(sentence) {
-  if (parseInt(sentence) || (typeof sentence !== 'string') || (sentence.length < 1))
+  if ((typeof sentence !== 'string') || (sentence.trim().length < 1))
   return []
 
-  let newSentence = sentence.split(" ")
-  let newArr = Math.max(...newSentence.map(letter => letter.length))
+  const spletedSentence = sentence.split(" ")
+  const getMaxLength = Math.max(...spletedSentence.map(letter => letter.length))
   let words = []
 
-  for (const el of newSentence) {
-    if (newArr === el.length) {
+  for (const el of spletedSentence) {
+    if (getMaxLength === el.length) {
       words.push(el)
     }
   }
   return words
 }
   
-console.log(findLongestWords("The quick rown fox jumps"))
 export { isPalindrom, findLongestWords };

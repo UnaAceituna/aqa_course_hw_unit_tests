@@ -50,7 +50,7 @@ console.log(devideBy('I am super engineer'))
     - Например fibonacci(8) //21
   */
 function fibonacci(n) {
-  let arr = [0, 1,]
+  let arr = [0, 1]
   if (typeof n !== "number" || n < 0) throw new Error("It won't help you")
   if (n < 2) {
     return n;
