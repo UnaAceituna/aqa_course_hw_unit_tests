@@ -9,13 +9,13 @@
 */
 
 function digitalRoot(number) {
-  if (number >= 0 && number <= 9) {
-    return number
-  } 
-
   if (isNaN(number)) {
     return false
   }
+
+  if (number >= 0 && number <= 9) {
+    return number
+  } 
 
   let num = ("" + number).split('').map(Number)
   let sum = 0
@@ -27,6 +27,5 @@ function digitalRoot(number) {
       } else
         return sum
 }
-console.log(digitalRoot(5))
 
 export { digitalRoot };
