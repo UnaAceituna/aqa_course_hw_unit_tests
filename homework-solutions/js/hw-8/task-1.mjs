@@ -14,25 +14,24 @@
 
 const numbers = [7, 8, 2, 30, 85, 95, 77, 94, 37, 31];
 
-let forEach = []
+const forEach = []
 numbers.forEach((el) => {
    if (el%3 === 0) {
       forEach.push(el)
    }
 });
 
-let map = numbers.map((el) => {
+const map = numbers.map((el) => {
    return el - numbers.length
 })
 
-let filter = numbers.filter((el, index) => {
+const filter = numbers.filter((el, index) => {
    return el > numbers[index - 1]
    }
 )
+const find = numbers.find((el, index) => el === index);
 
-let find = numbers.find((el, index) => el === index);
-
-let sort = numbers.sort((a,b) => a - b);
+const sort =[...numbers].sort((a,b) => a - b);
 
 let reduce = numbers.reduce((acc, el) => {
    return acc + el

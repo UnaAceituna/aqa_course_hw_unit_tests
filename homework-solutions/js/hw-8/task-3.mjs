@@ -11,7 +11,7 @@ function findMissingNumber(numbers) {
   if (numbers.length === 0) {
     throw new Error ("Wrong numbers")
   }
-  const sortedArr = numbers.sort((a, b) => a-b)
+  const sortedArr = [...numbers].sort((a, b) => a-b)
 
   const sumOfNaturalNumbers = (sortedArr.length + 1)*((sortedArr.length + 1) + 1)/2
   

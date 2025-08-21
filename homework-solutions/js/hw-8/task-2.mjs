@@ -23,11 +23,12 @@ const words = [
 const vowels = ['a', 'e', 'i', 'o', 'u', 'y']
 
 function countedVowels(letters) {
-  return [...letters].filter(el => vowels.includes(el)).length
+  const filteredLetters =  [...letters].filter(el => vowels.includes(el)).length
+  return filteredLetters
 }
 
 function sortedByVowels(words) {
-  let sortedArr = words.sort((a,b) => countedVowels(a.toLowerCase()) - countedVowels(b.toLowerCase()))
+  const sortedArr = [...words].sort((a,b) => countedVowels(a.toLowerCase()) - countedVowels(b.toLowerCase()))
   return sortedArr
 }
 
