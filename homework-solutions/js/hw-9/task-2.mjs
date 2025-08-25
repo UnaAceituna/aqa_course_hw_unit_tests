@@ -35,8 +35,11 @@ function getCharactersByAge(minAge) {
 
 function updateCharacter(name, newCharacter) {
     const getData = getCharacter(name)
-    getData.name = newCharacter.name
-    getData.age = newCharacter.age
+    if (!getData) {
+      throw new Error('You recieved invalid data!')
+    }
+    getData.name = newCharacter.name ?? getData.name
+    getData.age = newCharacter.age ?? newCharacter.age
     return characters
 }
 
