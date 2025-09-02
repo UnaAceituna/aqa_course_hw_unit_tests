@@ -16,11 +16,36 @@
 */
 
 function getRandomArbitrary(min, max) {
-  return Math.random() * (max - min) + min;
+  return  Math.floor(Math.random() * ((max + 1) - min) + min)
 }
 
 function uniqueRandomGenerator(n) {
-  // Ваш код
+  const saver = []
+  return () => {
+    let num = 1;
+  if (saver.length >= n) {
+      return 'All numbers were received'
+  }
+ while (saver.includes(num)) {
+      num = getRandomArbitrary(1, n)
+    }
+    saver.push(num)
+    return num
+
+  
+  } 
 }
+
+
+const uniqueRandomGeneratorCaller = uniqueRandomGenerator(5)
+
+console.log(uniqueRandomGeneratorCaller())
+console.log(uniqueRandomGeneratorCaller())
+console.log(uniqueRandomGeneratorCaller())
+console.log(uniqueRandomGeneratorCaller())
+console.log(uniqueRandomGeneratorCaller())
+console.log(uniqueRandomGeneratorCaller())
+console.log(uniqueRandomGeneratorCaller())
+console.log(uniqueRandomGeneratorCaller())
 
 export { uniqueRandomGenerator };
