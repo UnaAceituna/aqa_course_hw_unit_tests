@@ -1,12 +1,10 @@
 // 1. Создайте функцию delayTwoSeconds, принимающую на вход коллбэк функцию, которая будет отрабатывать спустя 2 секунды после вызова delayTwoSeconds
 
-function delayTwoSeconds () {
-    setTimeout (() => {
-        console.log('Я отработала за 2 секунды')
-    }, 2000)
+function delayTwoSeconds (timeout) {
+    setTimeout (timeout, 2000)
 }
 
-delayTwoSeconds()
+delayTwoSeconds(() => console.log('Я отработала за 2 секунды'))
 
 // 2. Создайте переменную, в которую присвоите новый промис. Промис должен резолваться с числом 1. Обработайте промис методом .then и выведите результат
 //   его резолва в консоль
@@ -53,7 +51,7 @@ promiseNumber(-1)
 
 Promise.all([promiseNumber(1), promiseNumber(2), promiseNumber(3)])
     .then(values => {
-        values.map(el => console.log(el))
+        values.forEach(el => console.log(el))
     })
     .catch(error => {
         console.log(error)
@@ -63,7 +61,7 @@ Promise.all([promiseNumber(1), promiseNumber(2), promiseNumber(3)])
 //   в консоль статус и результат каждого промиса через .then
 Promise.allSettled([promiseNumber(1), promiseNumber(2), promiseNumber(3)])
     .then(values => {
-        values.map(el => console.log(el))
+        values.forEach(el => console.log(el))
     })
 
 // 7. Повторите пункты 5 и 6 используя асинхронные функции с блоком try..catch
@@ -72,7 +70,7 @@ const arr = [promiseNumber(4), promiseNumber(5), promiseNumber(6)]
 
 async function getPromiseAll () {
     try {
-        const result1 = (await Promise.all(arr)).map((el) => console.log(el))
+        const result1 = (await Promise.all(arr)).forEach((el) => console.log(el))
     }
         catch(error) {
         console.error(error.message)
@@ -81,7 +79,7 @@ async function getPromiseAll () {
 
 async function getPromisSettled () {
     try {
-        const result2 = (await Promise.allSettled(arr)).map((el) => console.log(el))
+        const result2 = (await Promise.allSettled(arr)).forEach((el) => console.log(el))
     }
         catch(error) {
         console.error(error.message)

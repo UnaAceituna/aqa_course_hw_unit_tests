@@ -10,7 +10,12 @@ const baseUrl = "https://jsonplaceholder.typicode.com/todos"
 async function createTodo (thisBody) {
     try {
         const response = await fetch(baseUrl, {
-            method: "post"}
+            method: "post",
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(thisBody)
+        }
             )
         if (response.status !== 201) {
             throw new Error(`Is not available, recieved ${response.status} status`)
@@ -35,5 +40,4 @@ user = {
     "title": "delectus aut autem",
     "completed": false
 }
-
-createTodo(user)
+createTodo(user).then(result => console.log(result))
