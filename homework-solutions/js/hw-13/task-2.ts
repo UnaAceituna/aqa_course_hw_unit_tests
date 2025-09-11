@@ -12,11 +12,11 @@ function validatePassword(password: string): boolean {
     if (password.length < 8 && (password.trim().length === 0)) {
         return false
     } 
-    const UpperCase = /[A-Z]/.test(password)
-    const LowerCase = /[a-z]/.test(password)
+    const upperCase = /[A-Z]/.test(password)
+    const lowerCase = /[a-z]/.test(password)
     const digits = /\d/.test(password)
 
-    return UpperCase && LowerCase && digits
+    return upperCase && lowerCase && digits
     
 }
 console.log(validatePassword('  '))

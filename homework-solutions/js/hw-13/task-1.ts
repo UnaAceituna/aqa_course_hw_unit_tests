@@ -10,7 +10,7 @@ const numbers: number[] = [1, 2, 3, 4, 5]
 // - Массив строк: переменная cities, значения ["Minsk", "Warsaw", "London"].
 const cities: string[] = ["Minsk", "Warsaw", "London"]
 // - Объект: переменная person, объект с полями name: "Alice", age: 30, city: "Minsk".
-const person = {
+const person: { name: string; age: number; city: string } = {
     name:"Alice", 
     age: 30, 
     city: "Minsk"
@@ -31,7 +31,7 @@ type Grade = 'junior' | 'middle' | 'senior'
 // - brand (строка),
 // - model (строка),
 // - опциональное поле year (число).
-interface Car {
+interface ICar {
     brand: string,
     model: string,
     year?: number
@@ -39,13 +39,13 @@ interface Car {
 
 // 4. Создайте интерфейсы для:
 // - Интерфейса Address с полями street (строка), city (строка), и zipCode (число).
-interface Address {
+interface IAddress {
     street: string,
     city: string,
     zipCode: number
 }
 // - Интерфейса FullAddress, который наследует интерфейс Address и добавляет поле country (строка).
-interface FullAddress extends Address {
+interface IFullAddress extends IAddress {
     country: string
 }
 
